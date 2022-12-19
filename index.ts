@@ -88,7 +88,7 @@ function validate(payments: Payment[]) {
   }
 }
 
-function getDaysBetweenDates(startDate, endDate) {
+function getDaysBetweenDates(startDate: string, endDate: string) {
   const start = new Date(startDate).getTime();
   const end = new Date(endDate).getTime();
   const diffTime = Math.abs(end - start);
