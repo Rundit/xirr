@@ -10,7 +10,11 @@ type Payment = {
   date: string;
 };
 
-function compute(payments: Payment[]): number {
+type XirrOptions = {
+  guess?: number
+}
+
+function compute(payments: Payment[], options?: XirrOptions): number {
   validate(payments);
 
   const sortedPayments = payments.sort(
@@ -18,7 +22,7 @@ function compute(payments: Payment[]): number {
   );
 
   let rate = computeRate(payments, 0.1);
-  let guess = -0.99;
+  let guess = options?.guess || -0.99;
 
   while (guess < 1.0 && (Number.isNaN(rate) || !Number.isFinite(rate))) {
     rate = computeRate(sortedPayments, guess);
