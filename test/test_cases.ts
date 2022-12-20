@@ -1,4 +1,4 @@
-import { Payment } from '../src';
+import { Payment } from '../src'
 
 type ExpectedResult = number;
 export type TestCase = [ExpectedResult, Payment[]];
@@ -69,4 +69,12 @@ export const testCases: TestCase[] = [
       { date: '2020-10-06', amount: 0.0 },
     ],
   ],
-];
+  [
+    -0.92772,
+    [
+      { date: '2022-01-10', amount: -1_000_000 },
+      { date: '2022-01-10', amount: -1_000_000 },
+      { date: '2022-02-10', amount: 1_600_000 },
+    ]
+  ]
+]
